@@ -75,7 +75,7 @@ app.post('/collect', function(req, res){
 		cm2: 	emojiCount,
 		cm3: 	exclaCount,
 	//	cm4: 	letterCount,
-		cm5: 	elipseCount, 
+		cm5: 	elipseCount,
 		cm6: 	questionMark, //need to set up in GA
 		dh:		teamDomain+".slack.com",
 		dp:		"/"+channel.name,
@@ -84,13 +84,14 @@ app.post('/collect', function(req, res){
 		ec: 	"slack: "+ channel.name + "|" + channel.id,
 		ea: 	"post by " + user.id,
 		el: 	msgText,
-		ev: 	1 
+		ev: 	1
 	};
 	console.log(JSON.stringify(data));
 	console.log(req.body);
-	//Make Post Request	
-	request.post("https://www.google-analytics.com/collect?" + qs.stringify(data), 
+	//Make Post Request
+	request.post("https://www.google-analytics.com/collect?" + qs.stringify(data),
 		function(error, resp, body){
+		console.log("error");
 		console.log(error);
 	})
 	res.send("OK")
@@ -98,5 +99,5 @@ app.post('/collect', function(req, res){
 
 //Start Server
 app.listen(port, function () {
-	console.log('Listening on port ' + port); 
+	console.log('Listening on port ' + port);
 });
