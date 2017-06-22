@@ -25,7 +25,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/collect', function(req, res){
-
+	console.log("WHATA?!?!?");
 	var channel = {
 		id: 	req.body.channel_id,
 		name: 	req.body.channel_name
@@ -86,6 +86,7 @@ app.post('/collect', function(req, res){
 		el: 	msgText,
 		ev: 	1
 	};
+	console.log("WHATA?!?!?");
 	console.log(JSON.stringify(data));
 	console.log(req.body);
 	//Make Post Request
